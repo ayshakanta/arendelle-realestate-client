@@ -1,0 +1,141 @@
+[
+    {
+      "property_image": "https://i.ibb.co/mBgwNnn/property1.jpg",
+      "property_location": "123 Elm Street, Springfield, IL",
+      "price_range": "$300,000 - $350,000",
+      "verification_status": "Verified",
+      "property_title": "Charming 3 Bedroom House",
+      "agent_name": "John Doe",
+      "agent_image": "https://example.com/agent1.jpg",
+      "agent_email": "john.doe@example.com",
+      "property_description": "A beautiful 3 bedroom, 2 bathroom house located in the heart of Springfield.",
+      "reviews": [
+        {
+          "review_time": "2024-01-15T10:30:00Z",
+          "review_description": "Great property, very well maintained.",
+          "rating": 4.5
+        },
+        {
+          "review_time": "2024-01-20T14:45:00Z",
+          "review_description": "Spacious rooms and friendly neighborhood.",
+          "rating": 4.0
+        }
+      ]
+    },
+    {
+      "property_image": "https://i.ibb.co/D8Kr54K/property2.jpg",
+      "property_location": "456 Maple Avenue, Orlando, FL",
+      "price_range": "$500,000 - $550,000",
+      "verification_status": "Pending",
+      "property_title": "Modern 4 Bedroom Villa",
+      "agent_name": "Jane Smith",
+      "agent_image": "https://example.com/agent2.jpg",
+      "agent_email": "jane.smith@example.com",
+      "property_description": "A luxurious 4 bedroom villa with a private pool and garden.",
+      "reviews": [
+        {
+          "review_time": "2024-02-10T11:00:00Z",
+          "review_description": "Stunning property with modern amenities.",
+          "rating": 5.0
+        },
+        {
+          "review_time": "2024-02-15T13:25:00Z",
+          "review_description": "Excellent location and beautiful interiors.",
+          "rating": 4.8
+        }
+      ]
+    },
+    {
+      "property_image": "https://i.ibb.co/sgZxp1r/property3.jpg",
+      "property_location": "789 Oak Lane, Austin, TX",
+      "price_range": "$200,000 - $250,000",
+      "verification_status": "Verified",
+      "property_title": "Cozy 2 Bedroom Apartment",
+      "agent_name": "Michael Johnson",
+      "agent_image": "https://example.com/agent3.jpg",
+      "agent_email": "michael.johnson@example.com",
+      "property_description": "A cozy 2 bedroom apartment in a quiet neighborhood.",
+      "reviews": [
+        {
+          "review_time": "2024-03-05T09:20:00Z",
+          "review_description": "Affordable and well-maintained apartment.",
+          "rating": 4.2
+        },
+        {
+          "review_time": "2024-03-10T15:30:00Z",
+          "review_description": "Great value for money.",
+          "rating": 4.0
+        }
+      ]
+    },
+    {
+      "property_image": "https://i.ibb.co/CmXbqhy/property4.jpg",
+      "property_location": "321 Pine Street, Seattle, WA",
+      "price_range": "$450,000 - $500,000",
+      "verification_status": "Verified",
+      "property_title": "Elegant 3 Bedroom Condo",
+      "agent_name": "Emily Davis",
+      "agent_image": "https://example.com/agent4.jpg",
+      "agent_email": "emily.davis@example.com",
+      "property_description": "An elegant 3 bedroom condo with a stunning view of the city.",
+      "reviews": [
+        {
+          "review_time": "2024-04-01T12:15:00Z",
+          "review_description": "Fantastic location and beautiful view.",
+          "rating": 4.7
+        },
+        {
+          "review_time": "2024-04-05T16:45:00Z",
+          "review_description": "Spacious and well-designed interiors.",
+          "rating": 4.5
+        }
+      ]
+    },
+    {
+      "property_image": "https://i.ibb.co/TM7Tq2S/property5.jpg",
+      "property_location": "654 Cedar Drive, Denver, CO",
+      "price_range": "$350,000 - $400,000",
+      "verification_status": "Pending",
+      "property_title": "Spacious 4 Bedroom House",
+      "agent_name": "David Brown",
+      "agent_image": "https://example.com/agent5.jpg",
+      "agent_email": "david.brown@example.com",
+      "property_description": "A spacious 4 bedroom house with a large backyard.",
+      "reviews": [
+        {
+          "review_time": "2024-05-10T14:00:00Z",
+          "review_description": "Perfect for families, lots of space.",
+          "rating": 4.3
+        },
+        {
+          "review_time": "2024-05-15T10:35:00Z",
+          "review_description": "Great neighborhood and close to schools.",
+          "rating": 4.1
+        }
+      ]
+    },
+    {
+      "property_image": "https://i.ibb.co/YXZ78MG/property6.jpg",
+      "property_location": "987 Birch Road, Miami, FL",
+      "price_range": "$600,000 - $650,000",
+      "verification_status": "Verified",
+      "property_title": "Luxurious 5 Bedroom Mansion",
+      "agent_name": "Sophia Martinez",
+      "agent_image": "https://example.com/agent6.jpg",
+      "agent_email": "sophia.martinez@example.com",
+      "property_description": "A luxurious 5 bedroom mansion with a private beach.",
+      "reviews": [
+        {
+          "review_time": "2024-06-01T09:45:00Z",
+          "review_description": "Absolutely stunning property with all the amenities.",
+          "rating": 5.0
+        },
+        {
+          "review_time": "2024-06-05T12:30:00Z",
+          "review_description": "Unmatched luxury and comfort.",
+          "rating": 4.9
+        }
+      ]
+    }
+  ]
+  
