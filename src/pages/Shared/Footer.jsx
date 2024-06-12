@@ -1,24 +1,27 @@
+import { Link } from "react-router-dom";
+import logo from "../../../public/logo.png";
+
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="container px-6 py-8 mx-auto">
-        <div className="flex flex-col items-center text-center">
-          <a href="#">
-            <img
-              className="w-auto h-7"
-              src="https://merakiui.com/images/full-logo.svg"
-              alt=""
-            />
-          </a>
+        <div className="flex flex-col items-center text-center ">
+          <div className="w-14 flex items-center text-center">
+            <img src={logo} alt="" />
+            <h2 className="text-center text-3xl font-bold text-cyan-100">
+              Arendelle
+            </h2>
+          </div>
 
           <div className="flex flex-wrap justify-center mt-6 -mx-4">
-            <a
-              href="#"
+            <Link
+              to="/"
+              href=""
               className="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
               aria-label="Reddit"
             >
               Home
-            </a>
+            </Link>
 
             <a
               href="#"
