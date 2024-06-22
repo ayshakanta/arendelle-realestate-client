@@ -6,6 +6,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AllProperties></AllProperties>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/property/:id",
+        element: (
+          <PrivateRoute>
+            <PropertyDetails></PropertyDetails>
           </PrivateRoute>
         ),
       },

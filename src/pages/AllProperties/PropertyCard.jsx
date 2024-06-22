@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const PropertyCard = ({ property }) => {
   const {
     property_image,
@@ -28,7 +30,9 @@ const PropertyCard = ({ property }) => {
           <p>{agent_name}</p>
         </div>
       </div>
-      <button className="btn bg-white ml-2 mb-2">Show Details</button>
+      <Link to={`/property/${property?._id}`}>
+        <button className="btn bg-white ml-2 mb-2">Show Details</button>
+      </Link>
     </div>
   );
 };
