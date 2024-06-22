@@ -10,13 +10,15 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import toast, { Toaster } from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -49,6 +51,18 @@ const Login = () => {
       setDisabled(false);
     } else {
       setDisabled(true);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle();
+
+      navigate(from);
+      toast.success("Signup Successful");
+    } catch (err) {
+      console.log(err);
+      toast.error(err.message);
     }
   };
 
@@ -109,6 +123,15 @@ const Login = () => {
                   value="Login"
                 />
               </div>
+              <button
+                onClick={handleGoogleSignIn}
+                className="disabled:cursor-not-allowed flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer"
+              >
+                <FcGoogle size={32} />
+
+                <p>Continue with Google</p>
+              </button>
+              <Toaster></Toaster>
             </form>
             <p className="text-center text-xl font-bold">
               New Here?

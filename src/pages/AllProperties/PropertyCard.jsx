@@ -10,8 +10,12 @@ const PropertyCard = ({ property }) => {
     agent_image,
   } = property;
   return (
-    <div className="bg-slate-400 bg-opacity-15 mb-8">
-      <img className="w-full h-72 " src={property_image} alt="" />
+    <div className="bg-slate-400 bg-opacity-15 mb-8 group">
+      <img
+        className="w-full h-72 group-hover:scale-110 "
+        src={property_image}
+        alt=""
+      />
       <h2 className="ml-2 text-2xl font-bold mt-2">{property_title}</h2>
       <div className="flex justify-between px-2 py-4">
         <div>
