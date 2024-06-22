@@ -12,6 +12,7 @@ import { useState } from "react";
 const AllProperties = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const axiosCommon = useAxiosCommon();
+
   const { data: properties = [], isLoading } = useQuery({
     queryKey: ["properties"],
     queryFn: async () => {
