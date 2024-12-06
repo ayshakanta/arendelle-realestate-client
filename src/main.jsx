@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
-          <div className="font-oswald">
+          <div className="font-oswald max-w-screen-xl mx-auto">
             <RouterProvider router={router} />
           </div>
         </AuthProvider>

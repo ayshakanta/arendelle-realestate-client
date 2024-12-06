@@ -8,6 +8,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 import Dashboard from "../Layout/Dashboard";
+import AddProperty from "../pages/Agent/AddProperty";
+import MyAddedProperties from "../pages/Agent/MyAddedProperties";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +50,15 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
-    children: [],
+    children: [
+      {
+        path: "addProperty",
+        element: <AddProperty></AddProperty>,
+      },
+      {
+        path: "addedProperties",
+        element: <MyAddedProperties></MyAddedProperties>,
+      },
+    ],
   },
 ]);
