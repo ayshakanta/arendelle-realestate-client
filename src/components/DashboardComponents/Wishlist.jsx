@@ -1,7 +1,34 @@
+import Swal from "sweetalert2";
 import useWishlist from "../../hooks/useWishlist";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const Wishlist = () => {
-  const [wishlist] = useWishlist();
+  const [wishlist, refetch] = useWishlist();
+  const axiosSecure = useAxiosSecure();
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/wishlist/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
+  };
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-10">
       {wishlist.length}
@@ -33,8 +60,17 @@ const Wishlist = () => {
               <p>{item.agent_name}</p>
             </div>
           </div>
-
-          <button className="btn bg-white ml-2 mb-2">Show Details</button>
+          <div>
+            <button className="btn bg-cyan-900 text-white ml-2 mb-2">
+              Make An Offer
+            </button>
+            <button
+              onClick={() => handleDelete(item._id)}
+              className="btn bg-white ml-2 mb-2"
+            >
+              Remove
+            </button>
+          </div>
         </div>
       ))}
     </div>
