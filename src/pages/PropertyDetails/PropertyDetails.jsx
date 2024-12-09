@@ -5,6 +5,7 @@ import useAxiosCommon from "../../hooks/useAxiosCommon";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useWishlist from "../../hooks/useWishlist";
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -21,10 +22,10 @@ const PropertyDetails = () => {
   const { user } = useAuth();
 
   const axiosSecure = useAxiosSecure();
+  const [, refetch] = useWishlist();
 
-  const handleAddToWishlist = (item) => {
+  const handleAddToWishlist = () => {
     if (user && user.email) {
-      console.log(user.email, item);
       const wishlistItem = {
         email: user.email,
         property_image,
@@ -35,6 +36,7 @@ const PropertyDetails = () => {
         agent_image,
         agent_email,
         property_description,
+        price_range,
       };
       axiosSecure.post("/wishlist", wishlistItem).then((res) => {
         console.log(res.data);
@@ -46,24 +48,9 @@ const PropertyDetails = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          refetch();
         }
       });
-
-      // } else {
-      //   Swal.fire({
-      //     title: "You are not Logged In",
-      //     text: "Please login to add to the Wishlist",
-      //     icon: "warning",
-      //     showCancelButton: true,
-      //     confirmButtonColor: "#3085d6",
-      //     cancelButtonColor: "#d33",
-      //     confirmButtonText: "Yes,Login!",
-      //   }).then((result) => {
-      //     if (result.isConfirmed) {
-      //      navigate("/login")
-      //       });
-      //     }
-      //   });
     }
   };
 
@@ -76,6 +63,7 @@ const PropertyDetails = () => {
     agent_image,
     agent_email,
     property_description,
+    price_range,
     reviews,
   } = property;
   if (isLoading) {
@@ -104,6 +92,10 @@ const PropertyDetails = () => {
               <p>
                 <span className="font-bold mr-2">Property Location:</span>
                 {property_location}
+              </p>
+              <p>
+                <span className="font-bold mr-2">Price:</span>
+                {price_range}
               </p>
               <p>
                 <span className="font-bold mr-2">Verification Status:</span>
@@ -138,7 +130,7 @@ const PropertyDetails = () => {
           </div>
           <div className="mt-8 text-center">
             <button
-              onClick={() => handleAddToWishlist(property)}
+              onClick={handleAddToWishlist}
               className="btn bg-slate-200 text-cyan-900 ml-2 mb-2"
             >
               Add to Wishlist

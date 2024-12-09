@@ -10,6 +10,7 @@ import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 import Dashboard from "../Layout/Dashboard";
 import AddProperty from "../pages/Agent/AddProperty";
 import MyAddedProperties from "../pages/Agent/MyAddedProperties";
+import Wishlist from "../components/DashboardComponents/Wishlist";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: "addedProperties",
         element: <MyAddedProperties></MyAddedProperties>,
+      },
+      {
+        path: "wishlist",
+        element: <Wishlist></Wishlist>,
       },
     ],
   },
