@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import { axiosCommon } from "../../hooks/useAxiosCommon";
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
   useEffect(() => {
@@ -56,10 +57,18 @@ const Login = () => {
 
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithGoogle();
-
-      navigate(from);
-      toast.success("Signup Successful");
+      await signInWithGoogle().then((result) => {
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+          photo: result.user?.photoURL,
+        };
+        axiosCommon.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+          navigate(from);
+          toast.success("Signup Successful");
+        });
+      });
     } catch (err) {
       console.log(err);
       toast.error(err.message);
