@@ -11,6 +11,7 @@ import Dashboard from "../Layout/Dashboard";
 import AddProperty from "../pages/Agent/AddProperty";
 import MyAddedProperties from "../pages/Agent/MyAddedProperties";
 import Wishlist from "../components/DashboardComponents/Wishlist";
+import AllUsers from "../pages/Admin/AllUsers";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +64,13 @@ export const router = createBrowserRouter([
       {
         path: "wishlist",
         element: <Wishlist></Wishlist>,
+      },
+
+      // admin routes
+
+      {
+        path: "users",
+        element: <AllUsers></AllUsers>,
       },
     ],
   },

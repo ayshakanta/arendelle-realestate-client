@@ -12,6 +12,8 @@ import { FaOpencart } from "react-icons/fa";
 const Sidebar = () => {
   const { logOut } = useAuth();
   const [isActive, setActive] = useState(false);
+  const isAdmin = true;
+  const isAgent = true;
 
   // Sidebar Responsive Handler
   const handleToggle = () => {
@@ -78,56 +80,208 @@ const Sidebar = () => {
 
           <div className="flex flex-col justify-between flex-1 mt-6">
             <nav>
-              <NavLink
-                to="/dashboard/profile"
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <FcSettings className="w-5 h-5" />
+              {isAdmin ? (
+                <>
+                  {/* admin */}
 
-                <span className="mx-4 font-medium">Profile</span>
-              </NavLink>
-              <NavLink
-                to="wishlist"
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <FaOpencart className="w-5 h-5" />
+                  <NavLink
+                    to="addedProperties"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Wishlist</span>
-              </NavLink>
+                    <span className="mx-4 font-medium">Admin Profile</span>
+                  </NavLink>
+                  <NavLink
+                    to="addedProperties"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
 
-              <NavLink
-                to="addProperty"
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <BsFillHouseAddFill className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Manage Properties</span>
+                  </NavLink>
+                  <NavLink
+                    to="users"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Add Property</span>
-              </NavLink>
+                    <span className="mx-4 font-medium">Manage Users</span>
+                  </NavLink>
+                  <NavLink
+                    to=""
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
 
-              <NavLink
-                to="addedProperties"
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <MdHomeWork className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Manage Reviews</span>
+                  </NavLink>
+                </>
+              ) : isAgent ? (
+                <>
+                  {/* agent */}
 
-                <span className="mx-4 font-medium">My Added Properties</span>
-              </NavLink>
+                  <NavLink
+                    to="addProperty"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <BsFillHouseAddFill className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">Agent Profile</span>
+                  </NavLink>
+                  <NavLink
+                    to="addProperty"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <BsFillHouseAddFill className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">Add Property</span>
+                  </NavLink>
+
+                  <NavLink
+                    to="addedProperties"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">
+                      My Added Properties
+                    </span>
+                  </NavLink>
+                  <NavLink
+                    to="addedProperties"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">My Sold Properties</span>
+                  </NavLink>
+                  <NavLink
+                    to="addedProperties"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">
+                      Requested Properties
+                    </span>
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  {/* user */}
+                  <NavLink
+                    to="/dashboard/profile"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FcSettings className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">My Profile</span>
+                  </NavLink>
+                  <NavLink
+                    to="wishlist"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaOpencart className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">Wishlist</span>
+                  </NavLink>
+                  <NavLink
+                    to="wishlist"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaOpencart className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">Property Bought</span>
+                  </NavLink>
+                  <NavLink
+                    to="wishlist"
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaOpencart className="w-5 h-5" />
+
+                    <span className="mx-4 font-medium">My Reviews</span>
+                  </NavLink>
+                </>
+              )}
             </nav>
           </div>
         </div>
