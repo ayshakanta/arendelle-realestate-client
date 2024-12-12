@@ -12,6 +12,10 @@ import AddProperty from "../pages/Agent/AddProperty";
 import MyAddedProperties from "../pages/Agent/MyAddedProperties";
 import Wishlist from "../components/DashboardComponents/Wishlist";
 import AllUsers from "../pages/Admin/AllUsers";
+import AdminProfile from "../pages/Admin/AdminProfile";
+import AdminRoute from "./AdminRoute";
+import ManageProperties from "../pages/Admin/ManageProperties";
+import ManageReviews from "../pages/Admin/ManageReviews";
 
 export const router = createBrowserRouter([
   {
@@ -70,7 +74,35 @@ export const router = createBrowserRouter([
 
       {
         path: "users",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "adminProfile",
+        element: (
+          <AdminRoute>
+            <AdminProfile></AdminProfile>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageProperties",
+        element: (
+          <AdminRoute>
+            <ManageProperties></ManageProperties>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageReview",
+        element: (
+          <AdminRoute>
+            <ManageReviews></ManageReviews>
+          </AdminRoute>
+        ),
       },
     ],
   },

@@ -2,7 +2,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import useAgent from "../hooks/useAgent";
 import useAuth from "../hooks/useAuth";
 
-const AgentRoute = (children) => {
+const AgentRoute = ({ children }) => {
   const [user, loading] = useAuth();
   const [isAgent, isAgentLoading] = useAgent();
 
