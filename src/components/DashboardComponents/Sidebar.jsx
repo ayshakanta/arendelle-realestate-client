@@ -9,12 +9,13 @@ import { FcSettings } from "react-icons/fc";
 import { GrLogout } from "react-icons/gr";
 import { FaOpencart } from "react-icons/fa";
 import useAdmin from "../../hooks/useAdmin";
+import useAgent from "../../hooks/useAgent";
 
 const Sidebar = () => {
   const { logOut } = useAuth();
   const [isActive, setActive] = useState(false);
   const isAdmin = useAdmin();
-  const isAgent = true;
+  const isAgent = useAgent();
 
   // Sidebar Responsive Handler
   const handleToggle = () => {
