@@ -8,11 +8,12 @@ import { MdHomeWork } from "react-icons/md";
 import { FcSettings } from "react-icons/fc";
 import { GrLogout } from "react-icons/gr";
 import { FaOpencart } from "react-icons/fa";
+import useAdmin from "../../hooks/useAdmin";
 
 const Sidebar = () => {
   const { logOut } = useAuth();
   const [isActive, setActive] = useState(false);
-  const isAdmin = true;
+  const isAdmin = useAdmin();
   const isAgent = true;
 
   // Sidebar Responsive Handler
